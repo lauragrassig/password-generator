@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Make your pass harder</title>
+
+  <link rel="stylesheet" type="text/css" href="src/assets/css/style.css">
+</head>
+<body>
+  
+  <div class="container">
+    <h1>Making your simple password stronger</h1>
+    <div class="password__content">
+      <div>
+        <input id="input" type="text" class="password__content--input" maxlength="20">
+        <button id="button" onclick="generatePass()" class="password__content--button">GO</button>
+      </div>
+      <div class="password__content--checkbox">
+        <input type="checkbox" id="checkbox" name="" value="" id="checkbox">
+        <label for="checkbox"><span class="never-select">convert Some letters to number</span></label>
+      </div>
+      <div class="password__content--result">
+        <span id="result"></span>
+        <button id="copyButton" onclick="copyResult()">COPY</button>
+      </div>
+      <div id="copied" class="password__content--copied">
+        copied
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="title">
+      Made with ♥ by kibum.png
+    </div>
+    <div class="sub">
+     <a href="https://www.instagram.com/kibum.png/" target=”_blank”>instagram: kibum.png</a>
+     <span>|</span>
+     <a href="https://twitter.com/kibumLaura" target=”_blank”> twitter: kibumLaura</a>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="javascript.js"></script> 
+</body>
+</html>

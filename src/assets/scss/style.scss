@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+//*~ Variables Color
+$background: #222;
+$background_container: #7bb4da;
+$background_soft: #d66aae;
+$color_base: #494343;
+
+//*~ Mixins
+@mixin button ($width, $height, $margin) {
+  width: $width;
+  height: $height;
+  border-radius: .2rem;
+  border: none;
+  font-size: 1rem;
+  margin-left: $margin;
+  background-color: $background_soft;
+  font-family: 'Amatic SC';
+  font-weight: bold;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: .2s ease;
+  &:hover {
+    opacity: .8;
+  }
+}
+
+$text: #9c9c9c;
+$input-bg-color: #fff;
+$input-text-color: #a3a3a3;
+$button-bg-color: #7f8ff4;
+$button-text-color: #fff;
+
+
+
+//*~ Default
+.footer {
+  bottom: 0;
+  color: white;
+  top: 35rem;
+  font-size: 2rem;
+  .title {
+    font-family: 'Amatic SC';
+  }
+  .sub {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1rem;
+    font-family: 'Amatic SC';
+    a {
+      color: $background_soft;
+      text-decoration: none;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+body {
+  width: 99%;
+  height: 45rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $background;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+
+  border-radius: 2rem;
+  overflow: hidden;
+  height: 32rem;
+
+  h1 {
+    color: white;
+    font-family: 'Amatic SC';
+    font-size: 2.5rem;
+  }
+}
+
+.password {
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    font-family: 'Amatic SC';
+    &--input {
+      width: 280px;
+      background: #fff;
+      color: $input-text-color;
+      font-size: 1.6rem;
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+      border: 0;
+      outline: 0;
+      padding: 15px 35px 15px 15px;
+      border-radius: .2rem;
+
+      &.--error {
+        border: 4px solid $background_soft;
+      }
+    }
+
+    &--button {
+     @include button(5rem, 3.15rem, -3rem)
+    }
+
+    &--checkbox {
+        width: 100%;
+        margin: 15px auto;
+        position: relative;
+        label {
+            position: relative;
+            min-height: 34px;
+            display: block;
+            padding-left: 40px;
+            font-size: 1.3rem;
+            color: white;
+            cursor: pointer;
+            span {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                margin: 4px;
+                width: 22px;
+                height: 22px;
+                transition: transform 0.28s ease;
+                border-radius: 3px;
+                border: 2px solid $background_soft;
+            }
+
+            &:after {
+                content: '';
+                display: block;
+                width: 10px;
+                height: 5px;
+                border-bottom: 2px solid $background_soft;
+                border-left: 2px solid $background_soft;
+                transform: rotate(-45deg) scale(0);
+                transition: transform ease 0.25s;
+                position: absolute;
+                top: 12px;
+                left: 10px;
+            }
+        }
+        input {
+          width: auto;
+          opacity: 0.00000001;
+          position: absolute;
+          left: 0;
+          margin-left: -20px;
+          &:checked ~ label{
+            &:before {
+              border: 2px solid $background_soft;
+            }
+            &:after {
+              transform: rotate(-45deg) scale(1);
+            }
+          }
+        }
+    }
+
+    &--result {
+      display: flex;
+      margin-top: 2rem;
+      color: $background_soft;
+      font: 1em sans-serif;
+      border-bottom: 1px solid rgba(246, 247, 250, 0.36);
+      font-size: 2.5rem;
+      
+      
+      button {
+        @include button(4rem, 3rem, 0);
+        font-size: 2rem;
+        display: none;
+        &.--display {
+          display: flex;
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    &--copied {
+      background-color: white;
+      font-size: 2rem;
+      border-radius: .5rem;
+      padding: .2rem 1em;
+      opacity: 1;
+      position: absolute;
+      top: 12rem;
+      transition: .2s ease;
+      opacity: 0;
+      &.--show {
+        top: 13.5rem;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.never-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
