@@ -60,7 +60,6 @@ $button-text-color: #fff;
 
 body {
   width: 99%;
-  height: 45rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,7 +72,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: -5rem auto 3rem auto;
   top: 0;
   bottom: 0;
 
@@ -118,7 +117,6 @@ body {
 
     &--checkbox {
         width: 100%;
-        margin: 15px auto;
         position: relative;
         label {
             position: relative;
@@ -180,7 +178,7 @@ body {
 
     &--result {
       display: flex;
-      margin-top: 2rem;
+      margin-top: 4rem;
       color: $background_soft;
       font: 1em sans-serif;
       border-bottom: 1px solid rgba(246, 247, 250, 0.36);
@@ -209,7 +207,7 @@ body {
       transition: .2s ease;
       opacity: 0;
       &.--show {
-        top: 13.5rem;
+        top: 15.5rem;
         opacity: 1;
       }
     }

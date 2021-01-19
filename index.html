@@ -12,15 +12,19 @@
 <body>
   
   <div class="container">
-    <h1>Making your simple password stronger</h1>
+    <h1>Make your simple password stronger</h1>
     <div class="password__content">
-      <div>
+      <div class="password__content--flex">
         <input id="input" type="text" class="password__content--input" maxlength="20">
         <button id="button" onclick="generatePass()" class="password__content--button">GO</button>
       </div>
       <div class="password__content--checkbox">
-        <input type="checkbox" id="checkbox" name="" value="" id="checkbox">
-        <label for="checkbox"><span class="never-select">convert Some letters to number</span></label>
+        <input type="checkbox" id="letterToNumber" name="" value="">
+        <label for="letterToNumber"><span class="never-select">convert Some letters to number</span></label>
+      </div>
+      <div class="password__content--checkbox">
+        <input type="checkbox" id="enableUpperCase" name="" value="">
+        <label for="enableUpperCase"><span class="never-select">Enable random UpperCase</span></label>
       </div>
       <div class="password__content--result">
         <span id="result"></span>
